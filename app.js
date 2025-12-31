@@ -4,7 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
-const PORT = 3000;
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -94,8 +94,8 @@ if (req.method === 'GET') {
 }
 
 })
-
-server.listen(PORT, () => {
+const PORT = process.env.PORT || 3000;
+server.listen(PORT,'0.0.0.0', () => {
     console.log(`Server listening of port: ${PORT}`);
 })
 
